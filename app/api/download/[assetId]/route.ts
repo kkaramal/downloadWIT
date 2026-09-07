@@ -32,10 +32,27 @@ export async function GET(
 
   try {
     const { downloadUrl } = await mintStreamingDownloadUrl(assetId, filename);
+    const wantsJson =
+      searchParams.get("format") === "json" ||
+      request.headers.get("accept")?.includes("application/json");
+    if (wantsJson) {
+      return NextResponse.json({
+        assetId,
+        title: lesson.title,
+        downloadUrl,
+        filename,
+      });
+    }
     return NextResponse.redirect(downloadUrl);
   } catch (error) {
     const message =
       error instanceof Error ? error.message : "Could not start download.";
+    const wantsJson =
+      searchParams.get("format") === "json" ||
+      request.headers.get("accept")?.includes("application/json");
+    if (wantsJson) {
+      return NextResponse.json({ error: message }, { status: 502 });
+    }
     return new NextResponse(message, { status: 502 });
   }
 }
