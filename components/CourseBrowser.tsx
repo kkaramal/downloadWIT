@@ -76,7 +76,7 @@ export function CourseBrowser({ modules }: { modules: Module[] }) {
     <div className="mx-auto grid min-h-full w-full max-w-7xl gap-8 px-6 py-8 lg:grid-cols-[minmax(0,1fr)_minmax(320px,28rem)]">
       <div className="min-w-0">
         <h1 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-          Course videos
+          Why Islam is True videos
         </h1>
         <p className="mt-1 text-sm text-zinc-500">
           Click a lesson to play it on the right. Download uses a signed MP4
@@ -150,13 +150,6 @@ export function CourseBrowser({ modules }: { modules: Module[] }) {
                   </div>
                 )}
               </div>
-              <a
-                href={downloadHref(selected)}
-                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-zinc-700 underline-offset-4 hover:underline dark:text-zinc-300"
-              >
-                <DownloadIcon className="h-4 w-4" />
-                Download video
-              </a>
             </>
           ) : (
             <div className="flex aspect-video items-center justify-center bg-zinc-50 text-sm text-zinc-500 dark:bg-zinc-900">

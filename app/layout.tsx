@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Course videos",
-  description: "Browse and download course videos",
+  title: "Why Islam is True videos",
+  description: "Browse and download Why Islam is True course videos",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
